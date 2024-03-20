@@ -1,0 +1,106 @@
+
+<div class="PassengerDetails">
+  <div class="displayPassengerDetails">
+    <h3>Passenger Details</h3>
+    <div
+      class="passengertab"
+      *ngFor="let passenger of passengerData; let i = index"
+    >
+      <span>Flightcode:{{ this.passenger.flight_number }}</span>
+      <span>Passenger:{{ this.passenger.passenger_name }}</span>
+      <span>SeatNo:{{ this.passenger.seat_number }}</span>
+      <button (click)="deleteData(passenger, i)" class="btn btn-danger">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div class="entry">
+    <h3>Seat Booking</h3>
+    <form
+      [formGroup]="PassengerDetailsEntryForm"
+      (ngSubmit)="PassengerDetailsEntry()"
+    >
+      <div class="form-group">
+        <label for="flight_number">Flight Number:</label>
+        <select
+          class="form-control"
+          id="travelingWithInfant"
+          formControlName="traveling_with_infant"
+          autocomplete="off"
+        >
+          <option *ngFor="let flight of flightData" value="{{ flight }}">
+            {{ flight }}
+          </option></select
+        ><br />
+      </div>
+      <div class="form-group">
+        <label for="passengerName">Passenger Name:</label>
+        <input
+          type="text"
+          id="passengerName"
+          formControlName="passenger_name"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group flex-elements">
+        <label for="seatNumber">Seat Number:</label>
+        <input
+          type="text"
+          id="seatNumber"
+          formControlName="seat_number"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div>
+        <div class="form-group">
+          <label for="bookingDate">Booking Date:</label>
+          <input
+            type="datetime-local"
+            id="bookingDate"
+            formControlName="booking_date"
+            autocomplete="off"
+          /><br />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ticketPrice">Ticket Price:</label>
+        <select
+          class="form-control"
+          id="ancillaryServices"
+          formControlName="ancillary_services"
+          autocomplete="off"
+        >
+          <option value="8000">Business Class:8000</option>
+          <option value="4500">Economy:4500</option>
+        </select>
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="requiresWheelchair">Ancillary Services</label>
+        <select
+          class="form-control"
+          id="ancillaryServices"
+          formControlName="ancillary_services"
+          autocomplete="off"
+        >
+          <option *ngFor="let service of ancillary" value="{{ service }}">
+            {{ service }}
+          </option></select
+        ><br />
+      </div>
+
+      <button
+        type="submit"
+        value="Submit"
+        value="Submit"
+        class="btn btn-primary"
+        [disabled]="PassengerDetailsEntryForm.invalid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+

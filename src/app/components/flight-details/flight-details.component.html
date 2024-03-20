@@ -1,0 +1,183 @@
+
+<div class="flight-details">
+  <div class="dashboard">
+    <h3>Flights Available</h3>
+    <div class="flighttab" *ngFor="let flight of flightData; let i = index">
+      <span class=""
+        >Flight Number:{{ this.flight.flight_number }}<br />Plan type:{{
+          this.flight.plane_type
+        }}</span
+      >
+      <span class=""
+        >Departure Airport:{{ this.flight.departure_airport }} <br />Departure
+        Date:{{ this.flight.departure_date }}</span
+      >
+      <span class=""
+        >Arrival Airport:{{ this.flight.arrival_airport }} <br />
+        Arrival Date:{{ this.flight.arrival_date }}</span
+      >
+
+      <div class="buttonclass">
+        <button (click)="deleteData(flight, i)" class="btn btn-danger">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="FlightDetailsEntryForm" (ngSubmit)="FlightDetailsEntry()">
+    <h3>Flight Details</h3>
+    <div class="form-group">
+      <label for="flight_number">Flight Number:</label>
+      <input
+        type="text"
+        id="flight_number"
+        formControlName="flight_number"
+        autocomplete="off"
+      /><br />
+    </div>
+    <div class="form-group">
+      <label for="airline">Airline:</label>
+      <input
+        type="text"
+        id="airline"
+        formControlName="airline"
+        autocomplete="off"
+      /><br />
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="form-group flex-elements">
+        <label for="departure_airport">Departure Airport:</label>
+        <input
+          type="text"
+          id="departure_airport"
+          formControlName="departure_airport"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group">
+        <label for="departure_date">Departure Date and Time:</label>
+        <input
+          type="datetime-local"
+          id="departure_date"
+          formControlName="departure_date"
+          autocomplete="off"
+        /><br />
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="form-group flex-elements">
+        <label for="arrival_airport">Arrival Airport:</label>
+        <input
+          type="text"
+          id="arrival_airport"
+          formControlName="arrival_airport"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group">
+        <label for="arrival_date">Arrival Date and Time:</label>
+        <input
+          type="datetime-local"
+          id="arrival_date"
+          formControlName="arrival_date"
+          autocomplete="off"
+        /><br />
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="form-group flex-elements">
+        <label for="passenger_capacity">Passenger Capacity:</label>
+        <input
+          type="number"
+          id="passenger_capacity"
+          formControlName="passenger_capacity"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group">
+        <label for="available_seats">Available Seats:</label>
+        <input
+          type="number"
+          id="available_seats"
+          formControlName="available_seats"
+          autocomplete="off"
+        /><br />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="ticket_price">Ticket Price:</label>
+      <input
+        type="number"
+        id="ticket_price"
+        formControlName="ticket_price"
+        step="100"
+        autocomplete="off"
+      /><br />
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="form-group flex-elements">
+        <label for="pilot">Pilot:</label>
+        <input
+          type="text"
+          id="pilot"
+          formControlName="pilot"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group flex-elements">
+        <label for="co_pilot">Co-Pilot:</label>
+        <input
+          type="text"
+          id="co_pilot"
+          formControlName="co_pilot"
+          autocomplete="off"
+        /><br />
+      </div>
+      <div class="form-group flex-elements">
+        <label for="cabin_crew">Cabin Crew:</label>
+        <input
+          type="text"
+          id="cabin_crew"
+          formControlName="cabin_crew"
+          autocomplete="off"
+        /><br />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="plane_type">Aircraft Type:</label>
+      <input
+        type="text"
+        id="plane_type"
+        formControlName="plane_type"
+        autocomplete="off"
+      /><br />
+    </div>
+    <div class="form-group">
+      <label for="gate_number">Gate Number:</label>
+      <input
+        type="text"
+        id="gate_number"
+        formControlName="gate_number"
+        autocomplete="off"
+      /><br />
+    </div>
+    <div class="form-group">
+      <label for="status">Flight Status:</label>
+      <select id="status" formControlName="status">
+        <option value="On Time">On Time</option>
+        <option value="Delayed">Delayed</option>
+        <option value="Cancelled">Cancelled</option></select
+      ><br />
+    </div>
+    <button
+      type="submit"
+      class="submit"
+      value="Submit"
+      class="btn btn-primary"
+      [disabled]="FlightDetailsEntryForm.invalid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+

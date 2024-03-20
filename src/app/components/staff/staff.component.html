@@ -1,0 +1,54 @@
+
+<div *ngFor="let flight of flightData" class="forloop">
+  <div class="flight-display-tab">
+    <div class="flight-display">
+      <div class="slot-1" ngbTooltip="Departure:{{ formateDate(flight.departure_date) }}-{{ formateTime(flight.departure_date) }},
+                                      {{ flight.departure_airport }}
+                                      Arrival:{{ formateDate(flight.arrival_date) }}--{{ formateTime(flight.arrival_date) }},
+                                      {{ flight.arrival_airport }}
+                                      ">
+        <div (click)="navigateToSeatingLayout(flight.flight_number)" class="slot-1-1">
+          <img src="../../../assets/images/PNG/Air-India_S.png" />
+          <p>{{ flight.flight_number }}</p>  
+        </div>
+      </div>
+      <div class="slot-2">
+        <div class="slot-2-1">
+          <p>{{ formateDate(flight.departure_date) }}</p>
+          <div>{{ formateTime(flight.departure_date) }}</div>
+          <p>{{ flight.departure_airport }}</p>
+        </div>
+        <div class="slot-2-2">
+          <div class="bord"><hr /></div>
+        </div>
+        <div class="slot-2-3">
+          <p>{{ formateDate(flight.arrival_date) }}</p>
+          <div>{{ formateTime(flight.arrival_date) }}</div>
+          <p>{{ flight.arrival_airport }}</p>
+        </div>
+        <div></div>
+      </div>
+      <div class="slot-3">
+        <div>Seats Available</div>
+        <div>{{ flight.available_seats }}</div>
+      </div>
+      <div class="slot-4">
+        flight crew details
+        <div class="slot-4-1">
+          <p>Pilot:{{ flight.pilot }}</p>
+          <p>Co-pilot:{{ flight.co_pilot }}</p>
+        </div>
+      </div>
+      <div
+        routerLink="s"
+        class="slot-5"
+        (click)="navigateToSeatingLayout(flight.flight_number)"
+      >
+          Click here
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+

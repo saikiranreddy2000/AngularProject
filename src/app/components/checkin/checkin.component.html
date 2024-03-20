@@ -1,0 +1,61 @@
+
+<div class="layout">
+  <div class="seatsbox">
+    <div
+      class="seat"
+      [ngStyle]="{ 'background-color': seat.value ? 'rgb(32, 32, 85)' : '' }"
+      *ngFor="let seat of seats"
+      ngbTooltip="{{ seat.seat }}"
+      (click)="getpassengerdetails(seat.seat)"
+      (click)="openVerticallyCentered(content)"
+    ></div>
+  </div>
+  <div class="legend">
+    <div class="seatbooked"></div>
+    <div class="notbookedseats"></div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Passenger Details</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" let passengerdetails>
+    <p>Name:{{ passengerdetails[0].seat_number }}</p>
+    <p>Name:{{ passengerdetails[0].passenger_name }}</p>
+    <p>Services:{{ passengerdetails[0].services }}</p>
+
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="onboarded(passengerdetails[0].id)"
+    >
+      check in
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
+      (click)="remove(passengerdetails[0].id)"
+    >
+      Remove
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
+

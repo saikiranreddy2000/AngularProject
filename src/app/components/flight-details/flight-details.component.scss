@@ -1,0 +1,109 @@
+.flight-details {
+  display: flex;
+  flex-direction: row;
+}
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.flex-elements {
+  padding-right: 20px;
+}
+.exit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+.dashboard {
+  display: 50%;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  .flighttab {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: center;
+    border: 1px solid grey;
+    border-radius: 2px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1025px) and (min-width: 320px) {
+  .flight-details {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: 5rem;
+
+    form {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 425px) and (min-width: 320px) {
+  .flight-details {
+    display: flex;
+
+    flex-wrap: wrap;
+  }
+  form {
+    width: 100%;
+  }
+}

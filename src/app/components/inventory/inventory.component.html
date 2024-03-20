@@ -1,0 +1,48 @@
+
+<div class="dashboard">
+  <div class="flightButtons">
+    <div *ngFor="let flight of flightData">
+      <div class="custom-button" (click)="Details(flight.flight_number)">
+        {{ flight.flight_number }}
+      </div>
+    </div>
+  </div>
+
+  <div class="InventoryDisplay" *ngFor="let flight of flightDetails">
+    <div class="flightDetails">
+      <h3>Flight Information</h3>
+      <div>Flightcode:{{ flight.flight_number }}</div>
+      <div>Flightname:{{ flight.airline }}</div>
+      <div>Departure Airport:{{ flight.departure_airport }}</div>
+      <div>Departure Date:{{ flight.departure_date }}</div>
+      <div>Arrival Airport:{{ flight.arrival_airport }}</div>
+      <div>Arrival Date:{{ flight.arrival_date }}</div>
+    </div>
+    <div class="seatingInfo">
+      <h3>Seating Info</h3>
+      <div>Total Capacity:{{ flight.passenger_capacity }}</div>
+      <div>Flightseats:{{ flight.available_seats }}</div>
+      <div>Seats Booked:{{ passengerBookedForThisFlight() }}</div>
+      <div>
+        Passengers Onboarded:{{
+          onboardedPassengersForThisFlight(flight.flight_number)
+        }}
+      </div>
+    </div>
+    <div class="crewInfo">
+      <h3>Crew Info</h3>
+      <div>Pilot:{{ flight.pilot }}</div>
+      <div>Co-pilot:{{ flight.co_pilot }}</div>
+      <div>Cabin Crew:{{ flight.cabin_crew }}</div>
+    </div>
+    <div class="StatusInfo">
+      <h3>Status Info</h3>
+      <div>Gate Number:{{ flight.gate_number }}</div>
+      <div>Status:{{ flight.status }}</div>
+    </div>
+  </div>
+  <div class="col-3">
+    <img src="../../../assets/images/PNG/Maharaja logo.png" />
+  </div>
+</div>
+

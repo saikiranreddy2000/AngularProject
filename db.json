@@ -1,0 +1,173 @@
+{
+  "user": [
+    {
+      "fullname": "Admin1",
+      "email": "Admin1@gmail.com",
+      "password": "Admin",
+      "role": "Admin",
+      "signupdate": "2024-02-05T12:50:37.395Z",
+      "id": 1
+    },
+    {
+      "fullname": "Staff2",
+      "email": "Staff2@gmail.com",
+      "password": "Staff",
+      "role": "Staff",
+      "signupdate": "2024-02-05T12:50:37.395Z",
+      "id": 3
+    }
+  ],
+  "Notapprovedusers": [
+    {
+      "fullname": "Admin2",
+      "email": "Admin2@gmail.com",
+      "password": "Admin",
+      "role": "Admin",
+      "signupdate": "2024-02-05T12:50:37.395Z",
+      "id": 4
+    },
+    {
+      "fullname": "Staff1",
+      "email": "Staff1@gmail.com",
+      "password": "Staff",
+      "role": "Staff",
+      "signupdate": "2024-02-05T12:50:37.395Z",
+      "id": 2
+    }
+  ],
+  "flightDetails": [
+    {
+      "flight_number": "AI 804",
+      "airline": "Air India",
+      "departure_airport": "Bangalore",
+      "departure_date": "2024-04-06T18:24",
+      "arrival_airport": "Hyderabad",
+      "arrival_date": "2024-04-07T18:24",
+      "passenger_capacity": 200,
+      "available_seats": 150,
+      "pilot": "Raman",
+      "co_pilot": "Nirmal",
+      "cabin_crew": "Niraj",
+      "plane_type": "Air India",
+      "id": 1
+    }
+  ],
+  "checkIn": [
+    {
+      "flight_number": "AI 804",
+      "passenger_name": "ncwejicniew",
+      "seat_number": "A1",
+      "booking_date": "2024-02-08T17:58",
+      "passport": "incwi",
+      "ticket_price": "8000",
+      "services": [
+        "Pet assistance",
+        "Special Assistance Service",
+        "Language Assistance",
+        "Hotels",
+        "Travel Insurance"
+      ],
+      "id": 1
+    }
+  ],
+  "checkOut": [
+    {
+      "flight_number": "AI 804",
+      "passenger_name": "ncwejicniew",
+      "seat_number": "A1",
+      "booking_date": "2024-02-08T17:58",
+      "passport": "incwi",
+      "ticket_price": "8000",
+      "services": [
+        "Pet assistance",
+        "Special Assistance Service",
+        "Language Assistance",
+        "Hotels",
+        "Travel Insurance"
+      ],
+      "id": 1
+    }
+  ],
+  "passengersData": [
+    {
+      "flight_number": "AI 804",
+      "passenger_name": "ncwejicniew",
+      "seat_number": "A1",
+      "booking_date": "2024-02-08T17:58",
+      "passport": "incwi",
+      "ticket_price": "8000",
+      "services": [
+        "Pet assistance",
+        "Special Assistance Service",
+        "Language Assistance",
+        "Hotels",
+        "Travel Insurance"
+      ],
+      "id": 1
+    },
+    {
+      "flight_number": "AI 804",
+      "passenger_name": "asdasda",
+      "seat_number": "D2",
+      "booking_date": "2024-03-20T10:25",
+      "passport": "123213",
+      "ticket_price": "8000",
+      "services": [
+        "Special Assistance Service",
+        "Language Assistance",
+        "Infant Services"
+      ],
+      "id": 2
+    }
+  ],
+  "ancillary_services": [
+    {
+      "service_name": "In-Flight Meals",
+      "id": 1
+    },
+    {
+      "service_name": "Entertainment",
+      "id": 2
+    },
+    {
+      "service_name": "Baggage Services",
+      "id": 3
+    },
+    {
+      "service_name": "City Guide",
+      "id": 4
+    },
+    {
+      "service_name": "Travel Insurance",
+      "id": 5
+    },
+    {
+      "service_name": "Hotels",
+      "id": 6
+    },
+    {
+      "service_name": "Lounge access",
+      "id": 7
+    },
+    {
+      "service_name": "Chauffeur Services",
+      "id": 9
+    },
+    {
+      "service_name": "Infant Services",
+      "id": 10
+    },
+    {
+      "service_name": "Language Assistance",
+      "id": 11
+    },
+    {
+      "service_name": "Special Assistance Service",
+      "id": 15
+    },
+    {
+      "service_name": "Pet assistance",
+      "id": 16
+    }
+  ]
+}

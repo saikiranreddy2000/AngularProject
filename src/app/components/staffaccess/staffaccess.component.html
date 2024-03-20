@@ -1,0 +1,114 @@
+
+<div class="userstab">
+  <div class="heading"><h3>Active Users</h3></div>
+  <div class="main-tab">
+    <div
+      *ngFor="let user of ApprovedUsers; let i=index"
+      (click)="openVerticallyCentered(content2)"
+      class="tab-2"
+    >
+      <div class="name">{{ user.fullname }}</div>
+      <div class="role">{{ user.role }}</div>
+
+      <ng-template #content2 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">User Details</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>Name:{{ user.fullname }}</div>
+          <div>Role:{{ user.role }}</div>
+          <div>Email:{{ user.email }}</div>
+          <div>password:{{ user.password }}</div>
+          <div>Registered Date:{{ user.signupdate }}</div>
+        </div>
+        <div class="modulebuttons">
+        <button
+            type="button"
+            class="btn btn-danger"
+            (click)="decline(user,i)"
+          >
+            Remove acess
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="modal.close('Close click')"
+          >
+            Close
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<hr />
+<div class="userstab">
+  <div><h3>Users Waiting For Approval</h3></div>
+  <div class="main-tab">
+    <div
+      *ngFor="let user of notApprovedUsers; let i = index"
+      (click)="openVerticallyCentered(content2)"
+      class="tab-2"
+    >
+      <div class="name">{{ user.fullname }}</div>
+      <div class="role">{{ user.role }}</div>
+
+      <ng-template #content2 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">User Details</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>Name:{{ user.fullname }}</div>
+          <div>Role:{{ user.role }}</div>
+          <div>Email:{{ user.email }}</div>
+          <div>password:{{ user.password }}</div>
+          <div>Registered Date:{{ user.signupdate }}</div>
+        </div>
+        <div class="modulebuttons">
+          <button
+            type="button"
+            class="btn btn-success"
+            (click)="approveUser(user, i)"
+          >
+            Approve
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="modal.close('Close click')"
+          >
+            Decline
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="modal.close('Close click')"
+          >
+            Close
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

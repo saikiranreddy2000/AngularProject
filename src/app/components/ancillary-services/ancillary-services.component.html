@@ -1,0 +1,164 @@
+
+<div class="layout">
+  <div class="search">
+    <select [(ngModel)]="selectedOption">
+      <option
+        placeholder="search.."
+        *ngFor="let flightNumber of flightData"
+        value="{{ flightNumber }}"
+      >
+        {{ flightNumber }}
+      </option>
+    </select>
+    <button (click)="onButtonClick()">Select</button>
+  </div>
+  <div class="main-tab">
+    <div *ngFor="let service of ancillary; let i = index" class="tab-2">
+      <div class="icon">
+        <svg
+          id="Layer_1"
+          style="enable-background: new 0 0 612 792"
+          version="1.1"
+          viewBox="0 0 612 792"
+          xml:space="preserve"
+          ngbTooltip="Click to delete Service"
+          (click)="openVerticallyCentered(content3)"
+        >
+          <style type="text/css">
+            .st0 {
+              fill: grey;
+            }
+            .st0:hover {
+              fill: rgb(157, 8, 8);
+            }
+          </style>
+          <g>
+            <polygon
+              class="st0"
+              points="382.2,396.4 560.8,217.8 484,141 305.4,319.6 126.8,141 50,217.8 228.6,396.4 50,575 126.8,651.8    305.4,473.2 484,651.8 560.8,575 382.2,396.4  "
+            />
+          </g>
+        </svg>
+        <ng-template #content3 let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">{{ service.service_name }}</h4>
+            <button
+              type="button"
+              class="close"
+              aria-label="Close"
+              (click)="modal.dismiss('Cross click')"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span style="margin-right: 1rem"
+              >Are you sure to delete this service
+            </span>
+            <button class="btn btn-danger" (click)="removeService(service, i)">
+              Delete
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              (click)="modal.close('Close click')"
+            >
+              Close
+            </button>
+          </div>
+        </ng-template>
+      </div>
+      <div
+        class="serv"
+        (click)="getservice(service.service_name)"
+        (click)="openVerticallyCentered(content1)"
+      >
+        {{ service.service_name }}
+      </div>
+
+      <ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">{{ service.service_name }}</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span style="margin-right: 1rem">Seat</span><span>Name</span>
+          <div *ngFor="let pass of passenger">
+            <span style="margin-right: 2rem">{{ pass.seat_number }}</span
+            ><span>{{ pass.passenger_name }}</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="modal.close('Close click')"
+          >
+            Close
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="main-tab">
+    <div (click)="openVerticallyCentered(content2)" class="tab-2">
+      <div>+</div>
+
+      <ng-template #content2 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title">Add new Service</h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form
+            [formGroup]="serviceEntryForm"
+            (ngSubmit)="serviceDetailsEntry()"
+          >
+            <div class="form-group">
+              <label for="service_name">Service:</label>
+              <input
+                type="text"
+                id="service_name"
+                formControlName="service_name"
+                autocomplete="off"
+              /><br />
+            </div>
+            <button
+              type="submit"
+              value="Submit"
+              alue="Submit"
+              class="btn btn-primary"
+              [disabled]="serviceEntryForm.invalid"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-light"
+            (click)="modal.close('Close click')"
+          >
+            Close
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<button (click)="navigateToSchedule()">Back</button>
+<div class="Template">
+  <div class="colmun-1">
+    <div class="heading">
+      <h3>Passengers for the flight {{ this.getVariable() }}</h3>
+    </div>
+    <div class="entireseat">
+      <div
+        class="overall"
+        *ngFor="let passenger of passengerData; let i = index"
+      >
+        <div class="layout">
+          <div *ngFor="let seat of seats; let i = index">
+            <div
+              *ngIf="
+                seat == this.passenger.seat_number &&
+                this.passenger.flight_number == getVariable()
+              "
+              class="seats row"
+            >
+              <div
+                class="seats-slot-1 col-2"
+                ngbTooltip="{{ this.passenger.passenger_name }},
+                {{ this.passenger.services }}"
+              >
+                {{ seat }}
+                <div class="checkboxUnderSeat">
+                  <input
+                    type="checkbox"
+                    (change)="onCheckboxChange($event, passenger.id)"
+                  />
+                </div>
+              </div>
+              <div class="seats-slot-2 col-2">
+                {{ this.passenger.passenger_name }}
+              </div>
+              <div class="seats-slot-3 col-3">
+                <div>Ancillary Services:{{ this.passenger.services }}</div>
+              </div>
+      
+              <div class="custom-button col-2">
+                Checked<br />In<br />
+                <input
+                  type="checkbox"
+                  (change)="onCheckboxChange($event, passenger.id)"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="colmun-2">
+    <h3>Passenger onboarded</h3>
+    <div class="dashboard" *ngFor="let passenger of onboardedBasedOnFlight">
+      <div>
+        <div class="seats">
+          <span class="col-4"> Seat:{{ this.passenger.seat_number }}</span>
+          <span class="name col-6"
+            >Name:{{ this.passenger.passenger_name }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,50 @@
+.dashboard {
+  display: flex;
+  margin: 1rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  img {
+    width: 50%;
+  }
+  .total {
+    display: flex;
+    flex-direction: row;
+  }
+  .custom-button {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #eaf5f1;
+    cursor: pointer;
+    &:hover {
+      background-color: #eaf5f1;
+      transition: 0.1s;
+    }
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .InventoryDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    .flightDetails,
+    .seatingInfo,
+    .crewInfo,
+    .StatusInfo {
+      text-align: left;
+      margin: 10px;
+    }
+  }
+}
+@media screen and (max-width: 1025px) and (min-width: 320px) {
+  .dashboard {
+    margin-left: 5rem;
+    font-size: 1rem;
+    img {
+      display: none;
+    }
+  }
+}

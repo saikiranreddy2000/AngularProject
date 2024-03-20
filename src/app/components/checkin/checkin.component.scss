@@ -1,0 +1,79 @@
+.layout {
+  margin: 1rem;
+  padding: 2rem;
+  border: 2px solid black;
+}
+.seatsbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border: 2px solid grey;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.seat {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border: 2px solid grey;
+  margin: 3px;
+  border-radius: 4px;
+}
+.legend {
+  display: flex;
+  flex-direction: row;
+  .seatbooked {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid grey;
+    margin: 3px;
+    border-radius: 4px;
+    background-color: rgb(32, 32, 85);
+  }
+  .notbookedseats {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid grey;
+    margin: 3px;
+    border-radius: 4px;
+    background-color: grey;
+  }
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  @media screen and (max-width: 1025px) and (min-width: 320px) {
+    .PassengerDetails {
+      display: flex;
+      flex-direction: column;
+      margin-left: 4rem;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .passengertab {
+      justify-content: flex-start !important;
+    }
+  }
+}
+@media screen and (max-width: 1025px) and (min-width: 320px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .passengertab {
+    justify-content: flex-start !important;
+  }
+}

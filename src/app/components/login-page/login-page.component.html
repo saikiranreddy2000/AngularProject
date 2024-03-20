@@ -1,0 +1,38 @@
+<div class="tab">
+  <div class="card">
+    <div class="text-center">
+      <img src="../../../assets/images/PNG/Air-India_S.png" />
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-content">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          autocomplete="off"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          id="exampleInputPassword1"
+          autocomplete="off"
+        />
+      </div>
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="btn btn-primary"
+      >
+        login
+      </button>
+    </form>
+    <a routerLink="/signup">New user? Click to signup</a>
+  </div>
+</div>

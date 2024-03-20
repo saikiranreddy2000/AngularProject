@@ -1,0 +1,176 @@
+.flight-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  p {
+    margin: 5px 0;
+  }
+}
+.flight-display-tab {
+  padding: 24px 24px 0 24px;
+  background-color: white;
+}
+.flight-display {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  .slot-1,
+  .slot-2,
+  .slot-3 {
+    padding: 2rem 1rem 2rem 1rem;
+  }
+  .slot-1 {
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+  .slot-1-1 {
+    background-color: #f3f6f9;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    img {
+      width: 100px;
+    }
+    p {
+      font-weight: 900;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+  .slot-2 {
+    display: flex;
+    width: 50%;
+    p {
+      margin: 0;
+    }
+    .slot-2-1,
+    .slot-2-3 {
+      width: 100%;
+      padding-left: 4rem;
+    }
+    .slot-2-2 {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      .bord {
+        hr {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          border: 0;
+          border-top: 2px dotted black;
+        }
+        height: 30px;
+      }
+      .inventory {
+        display: inline-block;
+        text-align: center;
+        padding: 0.5rem;
+        background-color: #eaf5f1;
+        cursor: pointer;
+        &:hover {
+          background-color: #e9f7fa;
+          transition: 0.1s;
+        }
+        &:active {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+  .slot-4 {
+    padding: 2rem;
+    .slot-4-1 {
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .slot-5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #eaf5f1;
+    cursor: pointer;
+    &:hover {
+      background-color: #e9f7fa;
+      transition: 0.1s;
+    }
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+@media screen and (max-width: 1025px) and (min-width: 320px) {
+  .flight-display {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: row;
+
+    .slot-2 {
+      .slot-2-1 {
+        padding: 0px;
+      }
+      .slot-2-2 {
+        display: none;
+      }
+      .slot-2-3 {
+        padding: 0px;
+      }
+    }
+    .slot-4 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 677px) and (min-width: 391px) {
+  .flight-display {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .slot-5 {
+      margin: 2rem 0 2rem 0;
+    }
+    .slot-2,
+    .slot-3,
+    .slot-4 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 376px) and (min-width: 320px) {
+  .flight-display-tab {
+    padding: 0px;
+  }
+  .flight-display {
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    .slot-2,
+    .slot-3,
+    .slot-4,
+    .slot-5 {
+      display: none;
+    }
+  }
+}

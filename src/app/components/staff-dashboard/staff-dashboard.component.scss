@@ -1,0 +1,33 @@
+.main-tab{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin:2rem;
+
+.tab-1,.tab-2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   margin-right: 2rem;
+    height:10rem;
+    width:10rem;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    &:active {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+    
+}
+
+@media screen and (max-width: 1025px) and (min-width: 320px) {
+    .main-tab{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction:row;
+      margin-left: 5rem;
+    }
+  }
